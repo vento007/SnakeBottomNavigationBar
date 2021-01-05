@@ -8,9 +8,15 @@ class SelectionNotifier extends ChangeNotifier {
   SelectionNotifier(this.currentIndex, this.onTap);
 
   void selectIndex(int index) {
+
+    print("new snake $index");
+
+    if (index != 3){
+
     lastIndex = currentIndex;
     currentIndex = index;
     onTap?.call(index);
     notifyListeners();
+    }
   }
 }
